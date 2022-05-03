@@ -1,3 +1,4 @@
+#! C:/Users/sppra/AppData/Local/Programs/Python/Python310/python.exe
 import cv2
 import numpy as np
 import dlib
@@ -16,7 +17,7 @@ from utils.preprocessor import preprocess_input
 USE_WEBCAM = True # If false, loads video file source
 
 # parameters for loading data and images
-emotion_model_path = './models/emotion_model.hdf5'
+emotion_model_path = 'Face-and-Emotion-Recognition/models/emotion_model.hdf5'
 emotion_labels = get_labels('fer2013')
 
 # hyper-parameters for bounding boxes shape
@@ -36,27 +37,24 @@ emotion_target_size = emotion_classifier.input_shape[1:3]
 emotion_window = []
 
 # Load a sample picture and learn how to recognize it.
-obama_image = face_recognition.load_image_file("images/Obama.jpg")
+obama_image = face_recognition.load_image_file("C:/xampp/htdocs/J-comp/Face-and-Emotion-Recognition/images/Obama.jpg")
 obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-trump_image = face_recognition.load_image_file("images/Trump.jpg")
+trump_image = face_recognition.load_image_file("C:/xampp/htdocs/J-comp/Face-and-Emotion-Recognition/images/Trump.jpg")
 trump_face_encoding = face_recognition.face_encodings(trump_image)[0]
 
-modi_image = face_recognition.load_image_file("images/Modi.jpg")
+modi_image = face_recognition.load_image_file("C:/xampp/htdocs/J-comp/Face-and-Emotion-Recognition/images/Modi.jpg")
 modi_face_encoding = face_recognition.face_encodings(modi_image)[0]
 
-prav_image = face_recognition.load_image_file("images/Praveen.jpg")
+prav_image = face_recognition.load_image_file("C:/xampp/htdocs/J-comp/Face-and-Emotion-Recognition/images/Praveen.jpg")
 prav_face_encoding = face_recognition.face_encodings(prav_image)[0]
 
-vin_image = face_recognition.load_image_file("images/Vinay.jpg")
+vin_image = face_recognition.load_image_file("C:/xampp/htdocs/J-comp/Face-and-Emotion-Recognition/images/Vinay.jpg")
 vin_face_encoding = face_recognition.face_encodings(vin_image)[0]
 
-dev_image = face_recognition.load_image_file("images/Devika.jpg")
+dev_image = face_recognition.load_image_file("C:/xampp/htdocs/J-comp/Face-and-Emotion-Recognition/images/Devika.jpg")
 dev_face_encoding = face_recognition.face_encodings(dev_image)[0]
-
-pat_image = face_recognition.load_image_file("images/Patient.jpg")
-pat_face_encoding = face_recognition.face_encodings(pat_image)[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
@@ -75,7 +73,6 @@ known_face_names = [
     "Praveen",
     "Vinay",
     "Devika",
-    "Patient"
 ]
 
 # Initialize some variables
